@@ -1,0 +1,5 @@
+cloudscraper
+fastapi
+gunicorn
+uvicorn
+bs4
