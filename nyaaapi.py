@@ -7,7 +7,7 @@ app = FastAPI()
 
 @app.get("/")
 async def home():
-  return {
+  home = {
     'status': 'Nyaa Api Working Fine',
     'contributor': 'AuraMoon55',
     'routes': {
@@ -15,14 +15,16 @@ async def home():
       '/nyaa?code=code': 'Get Info of nyaa.si torrent by its code'
     }
   }
+  return home
 
 
 
 @app.get("/nyaa")
 async def get_nyaa(code: int = Query(None)):
   x = await get_torrent(code)
-  return {
+  code = {
     "status": "success",
     "info": x
   }
+  return code
 
