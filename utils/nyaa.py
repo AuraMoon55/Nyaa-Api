@@ -1,6 +1,5 @@
 import cloudscraper
 from bs4 import BeautifulSoup as bs
-from telegraph import Telegraph
 
 
 async def get_torrent(code):
