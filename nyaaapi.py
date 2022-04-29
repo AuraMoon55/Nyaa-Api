@@ -1,4 +1,4 @@
-from fastapi.responses import RedirectResponse, FileResponse
+from fastapi.responses import RedirectResponse as redirect, FileResponse
 import os
 from utils.nyaa import *
 from fastapi import FastAPI, Query
@@ -17,6 +17,9 @@ async def home():
   }
   return home
 
+@app.get("/repo")
+async def repo():
+  return redirect("https://github.com/AuraMoon55/Nyaa-Api/")
 
 
 @app.get("/nyaa")
