@@ -22,9 +22,10 @@ async def home():
 @app.get("/nyaa")
 async def get_nyaa(code: int = Query(None)):
   x = await get_torrent(code)
-  code = {
-    "status": "success",
-    "info": x
-  }
-  return code
+  if x["message"]:
+    return x
+  else:
+    x["status"] = "success"
+    code = x
+    return code
 
