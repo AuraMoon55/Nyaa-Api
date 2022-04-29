@@ -3,7 +3,7 @@ import os
 from utils.nyaa import *
 from fastapi import FastAPI, Query
 
-app = FastAPI()
+app = FastAPI(title="NyaaSi Api", version="0.0.1", contact={'name':'Anshul Garg','url':'https://www.github.com/AuraMoon55', 'email':'garganshul553@gmail.com'})
 
 @app.get("/")
 async def home():
@@ -12,7 +12,8 @@ async def home():
     'contributor': 'AuraMoon55',
     'routes': {
       '/': 'Home',
-      '/nyaa?code=code': 'Get Info of nyaa.si torrent by its code'
+      '/nyaa?code=code': 'Get Info of nyaa.si torrent by its code',
+      '/repo': 'Go To Repo'
     }
   }
   return home
