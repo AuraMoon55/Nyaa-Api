@@ -26,10 +26,6 @@ async def repo():
 @app.get("/nyaa")
 async def get_nyaa(code: int = Query(None)):
   x = await get_torrent(code)
-  if x["message"]:
-    return x
-  else:
-    x["status"] = "success"
-    code = x
-    return code
+  code = x
+  return code
 
