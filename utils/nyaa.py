@@ -40,4 +40,7 @@ async def get_torrent(code):
     graph['magnet'] = link 
     return graph
   except Exception:
-    return {}
+    return {
+             "status": "fail",
+             "message": Exception
+      }
