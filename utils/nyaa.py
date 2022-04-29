@@ -35,6 +35,7 @@ async def get_torrent(code):
       except:
         pass
     graph = {}
+    graph['status'] = "success"
     for a in inf:
       graph[f'{a[0]}'] = a[1]
     graph['magnet'] = link 
